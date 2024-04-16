@@ -1,4 +1,4 @@
-function resolvesDependencies(expressions) {
+function sortExpressions(expressions) {
   const graph = {};
   const visited = {};
   const result = []; // To store sorted expressions
@@ -55,5 +55,5 @@ function resolvesDependencies(expressions) {
 const test1 = ["x=ay", "y=x*5"];
 const test2 = ["x=y+6", "y=74", "z=(x*y)"];
 
-console.log(resolvesDependencies(test1)); // Output: ["cyclic_dependency"]
-console.log(resolvesDependencies(test2)); // Output: ["y=74", "x=y+6", "z=(x*y)"]
+console.log(sortExpressions(test1)); // Output: ["cyclic_dependency"]
+console.log(sortExpressions(test2)); // Output: ["y=74", "x=y+6", "z=(x*y)"]
